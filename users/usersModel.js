@@ -1,7 +1,12 @@
 const db = require('../data/db.config');
 
-function find() {
-    return db('users')
+function find(role) {
+    if (role == 'administration') {
+        return db('users')
+    } else if (role) {
+        return db('users')
+            .where({department: role})
+    }    
 };
 
 function add(user) {

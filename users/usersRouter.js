@@ -9,9 +9,12 @@ const users = require('./usersModel');
 const router = express.Router();
 
 router.get('/', auth, (req, res) => {
-    users.find()
+    const role = req.payload.department
+
+    users.find(role)
         .then(users => {
             res.status(200).json(users);
+            console.log(role);
         })
         .catch(err => {
             res.status(500).json({
