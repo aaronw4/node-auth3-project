@@ -2,12 +2,13 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const secrets = require('../config/secrets');
+const auth = require('../auth/auth-mw')
 
 const users = require('./usersModel');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', auth, (req, res) => {
     users.find()
         .then(users => {
             res.status(200).json(users);
