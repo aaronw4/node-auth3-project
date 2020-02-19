@@ -8,7 +8,7 @@ const usersRouter = require('./users/usersRouter');
 const server = express();
 
 server.use(express.json());
-server.use(cors);
+server.use(cors());
 //server.use(helmet);
 //server.use(jwt);
 
