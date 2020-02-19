@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/aaronw4/node-auth3-project#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "knex": "^0.20.10",
     "nodemon": "^2.0.2",
     "sqlite3": "^4.1.1"
